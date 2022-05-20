@@ -2850,7 +2850,7 @@ textarea {
       outline: unset !important;
       font-weight: 500;
       background: #000000;
-      border-radius: 50%;
+      border-radius: 50rem;
       &.selected, &:hover{
         outline: unset !important;
         color: #FFFFFF;
