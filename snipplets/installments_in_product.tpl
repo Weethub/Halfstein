@@ -1,0 +1,1 @@
+c:\ARQUIVOS_SIMAO\NUVEM_SHOP\Halfstein\Tema Customizado\snipplets\installments_in_product.tpl
