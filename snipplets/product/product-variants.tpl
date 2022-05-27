@@ -1,5 +1,5 @@
 <div class="js-product-variants form-row">
-    
+    {% set has_size_variations = false %}
     {# Color and size variants buttons #}
       
       {% for variation in product.variations if variation.name in ['Color', 'Cor', 'Talle', 'Tamanho', 'Size'] %}
@@ -25,6 +25,11 @@
               </div>
             </div>
         </div>
+
+		{% if variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+			{% set has_size_variations = true %}
+		{% endif %}
+
     {% endfor %}
 
 
@@ -41,5 +46,37 @@
                 {% endblock select_options%}
             {% endembed %}
         </div>
+
+        {% if variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+			{% set has_size_variations = true %}
+		{% endif %}
+
     {% endfor %}
+
+	{% if show_size_guide and settings.size_guide_url and has_size_variations %}
+		{% set has_size_guide_page_finded = false %}
+		{% set size_guide_url_handle = settings.size_guide_url | trim('/') | split('/') | last %}
+
+		{% for page in pages if page.handle == size_guide_url_handle and not has_size_guide_page_finded %}
+			{% set has_size_guide_page_finded = true %}
+			{% if has_size_guide_page_finded %}
+				<a data-toggle="#size-guide-modal" data-modal-url="modal-fullscreen-size-guide" class="js-modal-open js-fullscreen-modal-open btn-link btn-link-primary font-small col-12 mb-2">
+					{% include "snipplets/svg/arrows-h.tpl" with {svg_custom_class: "icon-inline icon-lg svg-icon-primary mr-1"} %}
+					{{ 'Guía de talles' | translate }}
+				</a>
+				{% embed "snipplets/modal.tpl" with{modal_id: 'size-guide-modal',modal_class: 'bottom-md', modal_position: 'right', modal_transition: 'slide', modal_header: true, modal_footer: true, modal_width: 'centered', modal_mobile_full_screen: 'true'} %}
+					{% block modal_head %}
+						{{ 'Guía de talles' | translate }}
+					{% endblock %}
+					{% block modal_body %}
+						<div class="user-content">
+							{{ page.content }}
+						</div>
+					{% endblock %}
+				{% endembed %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+
+
 </div>

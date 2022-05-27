@@ -50,8 +50,9 @@
  <form id="product_form" class="js-product-form" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
 	<input type="hidden" name="add_to_cart" value="{{product.id}}" />
  	{% if product.variations %}
-        {% include "snipplets/product/product-variants.tpl" %}
+        {% include "snipplets/product/product-variants.tpl" with {show_size_guide: true} %}
     {% endif %}
+
 
     {% set show_product_quantity = product.available and product.display_price %}
 

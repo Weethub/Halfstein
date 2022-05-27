@@ -4,7 +4,7 @@
     <div class="js-notification js-notification-cookie-banner notification notification-fixed-bottom notification-above notification-secondary" style="display: none;">
         <div class="container text-center text-md-left">
             <div class="row align-items-md-center">
-                <div class="col-12 col-md-7 offset-md-2 mb-3 mb-md-0 text-foreground">
+                <div class="col-12 col-md-7 offset-md-2 col-xl-8 offset-md-1 mb-3 mb-md-0 text-foreground">
                     {{ 'Al navegar por este sitio <strong>aceptás el uso de cookies</strong> para agilizar tu experiencia de compra.' | translate }}
                 </div>
                 <div class="col-md-auto">

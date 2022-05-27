@@ -65,7 +65,9 @@
                     </div>
                 </div>
             </div>
-            <div class="js-swiper-related-pagination swiper-pagination swiper-pagination-black"></div>
+            <div class="js-swiper-related-prev swiper-button-prev d-flex d-md-none svg-icon-text">{% include "snipplets/svg/chevron-left.tpl" with {svg_custom_class: "icon-inline icon-2x mr-1"} %}</div>
+            <div class="js-swiper-related-next swiper-button-next d-flex d-md-none svg-icon-text">{% include "snipplets/svg/chevron-right.tpl" with {svg_custom_class: "icon-inline icon-2x ml-1"} %}</div>
+            <div class="js-swiper-related-pagination swiper-pagination swiper-pagination-black d-none d-md-flex"></div>
         {% endif %}
     </div>
 {% endif %}

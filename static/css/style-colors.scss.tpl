@@ -2178,6 +2178,26 @@ header.head-primary{
 
 }
 
+.section-featured-home, #related-products{
+
+  .swiper-button-prev, .swiper-button-next{
+    background: rgba(0, 0, 0, .64);
+    align-items: center;
+    justify-content: center;
+    padding: 1.68rem;
+  }
+
+  .swiper-button-prev{
+    left: 0;
+  }
+
+  .swiper-button-next{
+    right: 0;
+  }
+
+  .icon-inline{ fill: #FFFFFF; }
+
+}
 
 .js-swiper-featured-pagination, .js-swiper-related-pagination{
   position: unset;
@@ -2944,6 +2964,8 @@ textarea {
       letter-spacing: normal;
       font-weight: 500 !important;
       max-width: 100%;
+      height: 3.12rem !important;
+      width: 16rem !important;
     
       &:hover{ background: darken(#19BC06, 16); }
 
@@ -3217,6 +3239,7 @@ textarea {
   padding: 0 !important;
   position: relative;
 
+  {#
   &:before{
     content: "";
     display: block;
@@ -3227,6 +3250,7 @@ textarea {
     left: calc(50% - 8rem);
     top: 0;
   }
+  #}
 	
   .weethub{
     svg{
@@ -3450,3 +3474,7 @@ form.form{
   .text-foreground{ color: #000000 !important; }
   .js-notification-close{ background-color: #000000 !important; }
 }
+
+
+.modal.modal-show { z-index: 999999; }
+.modal .modal-header{ margin-right: -20px !important; }
