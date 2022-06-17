@@ -49,7 +49,10 @@
 
 				<div class="col-12 col-md-2 pb-5">
 					<h3 class="h3 mb-3">Certificados</h3>
-					<img src="{{ 'images/_loja-segura.png' | static_url }}" class="img-fluid">
+					<img src="{{ 'images/_loja-segura.png' | static_url }}" class="img-fluid d-block mb-3">
+					<a href="https://weethub.com/?utm_source=Halfstein&utm_medium=linkrodape&utm_campaign=rodape" target="_blank">
+						<img src="{{ 'images/__selo.svg' | static_url }}" class="img-fluid">
+					</a>
 				</div>
 
 
@@ -72,6 +75,8 @@
 
 					{{ store.logo('small') | img_tag(store.name, {class: 'img-fluid d-block mb-3 mx-auto ml-md-0'}) | a_tag(store.url) }}
 
+					<p class="mb-3">CNPJ: <span class="cnpj-mask">{{ store.business_id }}</span></p>
+
 					<ul class="contact-info">
 						{% if store.email %}
 							<li class="contact-item">{% include "snipplets/svg/email.tpl" with {svg_custom_class: "icon-inline icon-lg icon-w contact-item-icon"} %}<a href="mailto:{{ store.email }}" class="contact-link">{{ store.email }}</a></li>
@@ -86,18 +91,18 @@
 				<div class="col-3 col-md-1 pb-5">
 
 					<ul class="redes-sociais-rodape d-flex flex-wrap align-items-center justify-content-end mb-0 pl-0 list-unstyled">
-						<li class="my-2">
+						<li class="my-1">
 							<a class="social-icon-rounded mb-0 d-flex align-items-center justify-content-center" href="{{ store.instagram }}" target="_blank">
 								{% include "snipplets/svg/instagram.tpl" with {svg_custom_class: "icon-inline icon-lg"} %}
 							</a>
 						</li>
-						{#
-						<li class="my-2 ml-1">
+						
+						<li class="my-1">
 							<a class="social-icon-rounded mb-0 d-flex align-items-center justify-content-center" href="{{ store.facebook }}" target="_blank">
 								{% include "snipplets/svg/facebook.tpl" with {svg_custom_class: "icon-inline icon-lg"} %}
 							</a>
 						</li>
-						#}
+						
 					</ul>
 						
 				</div>
